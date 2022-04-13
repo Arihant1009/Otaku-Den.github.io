@@ -103,23 +103,14 @@ nav{
     display: none;
  }
  img.Insta{
-  height: 5rem;
-  position: absolute;
-  right:130px;
-  bottom:290px;
+  display: none;
  } 
   img.Github{
-  height: 5rem;
-  position: absolute;
-  right:130px;
-  bottom:190px;
+    display: none;
  } 	
   img.Linke{
-  height: 5rem;
-  position: absolute;
-  right:130px;
-  bottom:85px;
- } 		
+    display: none;
+ } 	
  
 }
 
@@ -208,6 +199,13 @@ nav{
   100%{
     left: 0;
   }
+}
+@media screen and (max-width: 800px) {
+   .dynamic-txts{
+
+    right: 0;
+
+   }
 }
 .navimg {
   height: 3rem;
