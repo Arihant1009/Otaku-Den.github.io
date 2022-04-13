@@ -200,13 +200,6 @@ nav{
     left: 0;
   }
 }
-@media screen and (max-width: 800px) {
-   .dynamic-txts{
-
-    right: 0;
-
-   }
-}
 .navimg {
   height: 3rem;
 }
