@@ -1,0 +1,28 @@
+<div class="walcontainer lap">
+          <div class="img">
+            <img
+              src="assets/lap5.png"
+              alt="rattle the stars"
+              class="phonewal"
+            />
+          </div>
+          <div class="title">
+            Matte black <br />
+            <span class="light"> Laptop wallpaper</span> <br />
+            <span class="lighter"> 1950 x 2500 </span>
+            <br /><br />
+            <a href="assets/lap5.png" download
+              ><div class="button">
+                <div class="icondiv">
+                  <img src="assets/download.png" alt="download" class="icon" />
+                </div>
+                <div class="download">Download</div>
+              </div></a
+            >
+          </div>
+        </div>
+
+
+
+
+ 

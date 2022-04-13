@@ -1,0 +1,551 @@
+@font-face {
+  font-family: saltedmocha;
+  src: url(assets/SaltedMocha-Regular.otf);
+}
+
+body {
+   
+  --s: 25vmin;
+  --p: calc(var(--s) / 2);
+  --c1: #ff998a;
+  --c2: rgb(226, 226, 226);
+  --c3: rgba(8, 8, 8, 0.61);
+  --bg: var(--c3);
+  --d: 4000ms;
+  --e: cubic-bezier(0.76, 0, 0.24, 1);
+  
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(45deg, var(--c1) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--c1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--c2) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--c2) 75%);
+  background-size: var(--s) var(--s);
+  background-position: 
+    calc(var(--p) *  1) calc(var(--p) *  0), 
+    calc(var(--p) * -1) calc(var(--p) *  1), 
+    calc(var(--p) *  1) calc(var(--p) * -1), 
+    calc(var(--p) * -1) calc(var(--p) *  0);
+  animation: 
+    color var(--d) var(--e) infinite,
+    position var(--d) var(--e) infinite;
+}
+nav{
+  background-color: aliceblue;
+}
+
+@keyframes color {
+  0%, 25% {
+    --bg: var(--c3);
+  }
+  26%, 50% {
+    --bg: var(--c1);
+  }
+  51%, 75% {
+    --bg: var(--c3);
+  }
+  76%, 100% {
+    --bg: var(--c2);
+  }
+}
+
+@keyframes position {
+  0% {
+    background-position: 
+      calc(var(--p) *  1) calc(var(--p) *  0), 
+      calc(var(--p) * -1) calc(var(--p) *  1), 
+      calc(var(--p) *  1) calc(var(--p) * -1), 
+      calc(var(--p) * -1) calc(var(--p) *  0);
+  }
+  25% {
+    background-position: 
+      calc(var(--p) *  1) calc(var(--p) *  4), 
+      calc(var(--p) * -1) calc(var(--p) *  5), 
+      calc(var(--p) *  1) calc(var(--p) *  3), 
+      calc(var(--p) * -1) calc(var(--p) *  4);
+  }
+  50% {
+    background-position: 
+      calc(var(--p) *  3) calc(var(--p) * 8), 
+      calc(var(--p) * -3) calc(var(--p) * 9), 
+      calc(var(--p) *  2) calc(var(--p) * 7), 
+      calc(var(--p) * -2) calc(var(--p) * 8);
+  }
+  75% {
+    background-position: 
+      calc(var(--p) *  3) calc(var(--p) * 12), 
+      calc(var(--p) * -3) calc(var(--p) * 13), 
+      calc(var(--p) *  2) calc(var(--p) * 11), 
+      calc(var(--p) * -2) calc(var(--p) * 12);
+  }
+  100% {    
+    background-position: 
+      calc(var(--p) *  5) calc(var(--p) * 16), 
+      calc(var(--p) * -5) calc(var(--p) * 17), 
+      calc(var(--p) *  5) calc(var(--p) * 15), 
+      calc(var(--p) * -5) calc(var(--p) * 16);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  body {
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+ div.wave{
+    display: none;
+ }
+ div.hell2{
+    display: none;
+ }
+ img.Insta{
+  height: 5rem;
+  position: absolute;
+  right:130px;
+  bottom:290px;
+ } 
+  img.Github{
+  height: 5rem;
+  position: absolute;
+  right:130px;
+  bottom:190px;
+ } 	
+  img.Linke{
+  height: 5rem;
+  position: absolute;
+  right:130px;
+  bottom:85px;
+ } 		
+ 
+}
+
+ 
+.video-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	
+}
+
+.video-container video {
+	min-width: 100%;
+	min-height: 100%;
+  position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	object-fit: cover;
+}
+
+.video-container:after {
+	content: '';
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+}
+
+.item{
+	z-index: 10;
+}
+
+
+
+.wrapper .static-txt{
+  color: rgb(36, 85, 100);
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #FC6D6D;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border-left: 2px solid #e2d8d8;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+.navimg {
+  height: 3rem;
+}
+
+.hell{
+  z-index: 10;
+  position:absolute;
+  font-size: 50px;
+  font-weight: 100;
+  right: 10px;
+  left: 70px;
+}
+
+.hell2{
+  z-index: 10;
+  position:absolute;
+  font-size: 50px;
+  font-weight: 100;
+  right: 20px;
+  left: 160px;
+  bottom: 60px;
+}
+
+
+
+
+.nav {
+  padding: 2rem;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  width: 90%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav .logo {
+  height: 6rem;
+}
+
+.nav img:hover {
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
+.active {
+  border-bottom: 4px solid #050505;
+  padding-bottom: 1rem;
+}
+
+.container {
+  margin-top: 2rem;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;    
+}
+
+.container .mock {
+  height: 17rem;
+}
+
+.container .mockphone {
+  margin-right: 6rem;
+  height: 17rem;
+}
+
+.container .mocklap {
+  margin-top: 2rem;
+  margin-left: 4rem;
+  height: 13rem;
+}
+
+.text {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+  width: 50%; 
+  
+}
+
+.Github{
+  height: 4rem;
+  position: absolute;
+  right: 900px;0px;
+  bottom:310px;
+}
+
+.Linke{
+  height: 4rem;
+  position: absolute;
+  right: 1110px;
+  bottom:310px;
+}
+
+.Insta{
+  height: 5rem;
+  position: absolute;
+  right:1000px;
+  bottom:300px;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+
+
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contactimg {
+  width: 7rem;
+}
+
+.contact {
+  position: fixed;
+  left: 34%;
+  top: 28%;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+
+.contact:hover {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+
+
+
+
+.head {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  padding: 0.4rem;
+  border-bottom: 2px solid #FF725E;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.walcontainer {
+  background-color: #1a1b1c;
+  -webkit-box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  width: 60%;
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  padding: 1rem;
+}
+
+.walcontainer .img {
+  width: 100%;
+}
+
+.walcontainer .img img {
+  -webkit-box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.05);
+          box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.05);
+}
+
+.walcontainer .phonewal {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  border-radius: .5rem;
+}
+
+.walcontainer .title {
+  color: #efeff1;
+  text-align: start;
+  width: 100%;
+  line-height: rem;
+}
+
+.walcontainer .title span.light {
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+
+.walcontainer .title span.lighter {
+  font-size: 0.7rem;
+  font-weight: lighter;
+}
+
+.walcontainer .title .button {
+  -webkit-box-shadow: 10px 10px 47px 0px rgb(125 73 73 / 10%);
+          box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s cubic-bezier(0.42, 0, 0, 1.13);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FF725E;
+  border-radius: 2rem;
+  width: 53%;
+  padding: .5rem;
+  color: white;
+  text-align: center;
+}
+
+.walcontainer .title .button .icon {
+  width: 50%;
+}
+
+.walcontainer .title .button .download {
+  font-size: 90%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: .5rem;
+ }
+{
+/* Tablet:768px. */
+@media(min-width: 768px) and (max-width: 991px) {
+  .download {
+    font-size: 15px; 
+	   
+   }
+}
+{
+/* Mobile :320px. */
+@media (max-width: 767px) {
+   .download{
+     font-size: 24px;
+   }
+}
+}
+.walcontainer .title .button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+
+.lap {
+  width: 50vw;
+  height: 30vh !important;
+  height: 10rem;
+}
+
+.lap .img {
+  width: 100% !important;
+}
+
+.lap .phonewal {
+  width: 80% !important;
+  padding: 5rem;
+  margin-left: 0.5rem;
+  padding: 0;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  border-radius: .5rem;
+  margin-right: 1rem;
+}
+
+.lap .button {
+  width: 33% !important;
+}
+
+.col {
+  margin-top: 2rem;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.col .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.col .last {
+  width: 80% !important;
+}
+
+.construction {
+  font-family: saltedmocha;
+  font-size: 1.6rem;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  padding: 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.hidden {
+  overflow: hidden;
+}
